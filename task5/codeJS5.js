@@ -1,13 +1,14 @@
 function pageLoaded(){
 
-
-    const apiURL =  "https://picsum.photos/v2/list?page=1&limit=10";
+    // Лучше использовать основу URL без параметров, вы их всё равно задаете в функции formatURL
+    const apiURL =  "https://picsum.photos/v2/list";
     const inpt = document.querySelector(".text");
     const inptSec = document.querySelector(".textSec");
     const btn = document.querySelector(".btn.j-btn-request");
     const result = document.querySelector(".j-result");
     
-    if (localStorage.getItem('myKey')!==null) {
+    // Можно чуть упростить условие:
+    if (localStorage.getItem('myKey')) {
         result.innerHTML = localStorage.getItem('myKey');
     }
     

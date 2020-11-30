@@ -1,5 +1,6 @@
 const useRequest = (height, weight) => {
-    return fetch('https://picsum.photos/' + `${height}/${weight}`)
+    // Небольшое замечание: если используется шаблонная строка, нет необходимости складывать строки с помощью +
+    return fetch(`https://picsum.photos/${height}/${weight}`)
         .then((response) => {
     
             result.innerHTML = `
